@@ -11,7 +11,10 @@ pipeline {
  
         stage('Prepare') {
             steps {
-                sh 'pip3 install -r requirements.txt'
+                script {
+                    sh 'pip3 install -r requirements.txt'
+                }
+                
             }
         }
  
