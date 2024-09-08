@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/username/your-repository-name.git'
+                git branch: 'main', url: 'https://github.com/israelnp/simple-python-app.git'
             }
         }
  
