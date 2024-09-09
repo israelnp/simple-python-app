@@ -11,9 +11,8 @@ pipeline {
  
         stage('Prepare') {
             steps {
-                script {
+               
                     sh '/home/ec2-user/.local/bin/pip3 install -r requirements.txt'
-                }
                 
             }
         }
