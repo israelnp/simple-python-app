@@ -42,7 +42,7 @@ pipeline {
                 sh 'python3 -m venv venv'
                 sh '. venv/bin/activate'
                 sh 'venv/bin/pip3 install -r requirements.txt'
-                sh 'venv/bin/safety scan ./src'
+                sh 'venv/bin/safety check ./src'
             }
         }
  
