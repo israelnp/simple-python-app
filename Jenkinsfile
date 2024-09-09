@@ -39,9 +39,10 @@ pipeline {
  
         stage('SAST') {
             steps {
-               sh '''
-                        docker run --rm -v $(pwd):/src horuszup/horusec-cli horusec start -p . --log-level=info
-                    '''
+                sh 'python3 -m venv venv'
+                sh '. venv/bin/activate'
+                sh 'venv/bin/pip3 install -r requirements.txt'
+                sh 'venv/bin/safety scan ./src'
             }
         }
  
