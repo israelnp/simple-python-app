@@ -12,7 +12,14 @@ pipeline {
         stage('Prepare') {
             steps {
                
-                    sh '/home/ec2-user/.local/bin/pip3 install -r requirements.txt'
+                   script {
+                    // Cria um ambiente virtual e ativa
+                    sh 'python3 -m venv venv'
+                    sh '. venv/bin/activate'
+                    
+                    // Usa pip3 dentro do ambiente virtual
+                    sh 'venv/bin/pip3 install -r requirements.txt'
+                }
                 
             }
         }
