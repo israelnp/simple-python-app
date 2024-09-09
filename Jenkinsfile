@@ -39,7 +39,9 @@ pipeline {
  
         stage('SAST') {
             steps {
-                sh '/usr/local/bin/horusec start -p .'
+               sh '''
+                        docker run --rm -v $(pwd):/src horuszup/horusec-cli horusec start -p . --log-level=info
+                    '''
             }
         }
  
