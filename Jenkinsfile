@@ -30,6 +30,7 @@ pipeline {
                     // Cria um ambiente virtual e ativa
                     sh 'python3 -m venv venv'
                     sh '. venv/bin/activate'
+                    sh 'venv/bin/pip3 install -r requirements.txt'
                     sh 'pytest testRoutes.py'
                 }
                
