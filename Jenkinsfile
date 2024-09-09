@@ -26,7 +26,13 @@ pipeline {
  
         stage('Test') {
             steps {
-                sh 'pytest testRoutes.py'
+                script {
+                    // Cria um ambiente virtual e ativa
+                    sh 'python3 -m venv venv'
+                    sh '. venv/bin/activate'
+                    sh 'pytest testRoutes.py'
+                }
+               
             }
         }
  
